@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\Department;
-use App\Models\User;
+use App\Models\User; 
 
 class AdminCreateDepartment extends Component
 {
@@ -17,7 +17,7 @@ class AdminCreateDepartment extends Component
         $this->validateOnly($fields, [
             'name' => 'required|unique:departments'
         ]);
-    } 
+    }
 
     public function createDepartment()
     {  //form validation before processing
@@ -25,7 +25,7 @@ class AdminCreateDepartment extends Component
             'name' => 'required|unique:departments'
         ]);
         $dept = new Department();
-        $dept->name = $this->name; 
+        $dept->name = $this->name;
         $dept->lead = $this->lead;
         $dept->comment = $this->comment;
         $dept->save();
